@@ -1,34 +1,27 @@
-## Android MVVM Architecture Sample
+### Project Overview
 
-[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+This project aims is usage of Android Architecture Components  with clean architecture. 
 
-This project handles paging images and supports offline mode.
 
-<img src="art/screenshot_01.png" height="500"/>
+##### Project Description
 
-## How to build it
+First of all, I would like to show how I made the packages structure of the project For achieving The separation of concerns
 
-Thanks to Unsplash, this project uses their API to fetch beautiful images. 
+- Presentation layer
+will include normal Activities , Fragments and ViewModels which will only handle rendering views and will follow MVVM pattern.
 
-Note: I added the token in this project. You can try it now instead of doing the steps below.
+- Domain layer
+With the Use Cases that will include all business logic and interact between Data and Presentation layer by means of interface and interactors. The objective is to make the domain layer independent of anything, so the business logic can be tested without any dependency to external components.
 
-- Firstly, let's head to [Unsplash's developer page](https://unsplash.com/developers) to get your own API token.  
-- Secondly, put it inside your `build.gradle` file as following:
-```
-buildConfigField "String", "UNSPLASH_TOKEN", "\"Client-ID *********\""
-```
+- Data layer
+With the Repositories.
 
-### Libraries
+##### Libraries
 - AndroidX Support Library
-- AndroidX Architecture Components(Room, ViewModels, LiveData)
-- AndroidX Data Binding
+- AndroidX Architecture Components( ViewModels, LiveData)
 - RxJava2
 - Dagger2
-- Retrofit2
+- Retrofit
 
-### Contributing to Android MVVM Architecture
-Just make pull request. You are in!
-
-### License
-
-This project is available under the MIT license. See the LICENSE file for more info.
+## Note
+** Few file that are not using this project so please ignore all unused file**
